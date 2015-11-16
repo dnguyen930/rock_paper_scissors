@@ -1,0 +1,47 @@
+<head>
+    <title>Rock Paper Scissors!</title>
+</head>
+
+<body>
+{{> game}}
+</body>
+
+<template name="game">
+    {{#if player_number}}
+        <h2>Player {{player_number}}</h2>
+        {{game_status}}
+        <br><br>
+        {{#if game_done}}
+            {{> new_game}}
+        {{else}}
+            {{> rock}}
+            {{> paper}}
+            {{> scissors}}
+        {{/if}}
+    {{/if}}
+</template>
+
+<template name="home">
+    <h2>Rock Paper Scissors!</h2>
+    <p>Please go to /player1 or /player2</p>
+</template>
+
+<template name="play_game">
+    <input type='button' value='play rock paper scissors' class='play'>
+</template>
+
+<template name="rock">
+    <input type='button' value='rock' class='rock'>
+</template>
+
+<template name="paper">
+    <input type='button' value='paper' class='paper'>
+</template>
+
+<template name="scissors">
+    <input type='button' value='scissors' class='scissors'>
+</template>
+
+<template name="new_game">
+    <input type='button' value='New Game' class='new_game'>
+</template>
